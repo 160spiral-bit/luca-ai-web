@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
@@ -16,7 +16,8 @@
       rel="stylesheet"
     />
     <script>
-      
+      /* apply saved theme before first paint (same contract as the onboarding bridge:
+         'luca-onboarding' profile.theme, fallback to OS preference) */
       (function () {
         var theme = null;
         try {
@@ -43,130 +44,8 @@
         document.documentElement.setAttribute("data-theme", theme);
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-Br5Z5Kdm.js?v=3"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-ecFEfU0C.css">
-    
-    <style>
-      .aspect-square { aspect-ratio: 1 / 1; }
-      .aspect-\[1792\/1024\] { aspect-ratio: 1792 / 1024; }
-      .aspect-\[1024\/1792\] { aspect-ratio: 1024 / 1792; }
-      .line-clamp-2 {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-      }
-      /* Mobile improvements */
-      @media (max-width: 768px) {
-        /* Larger touch targets on mobile */
-        button { min-height: 36px; }
-        /* Better text size on mobile */
-        .chat-content { font-size: 15.5px; line-height: 1.65; }
-        /* Tighter padding on mobile chat */
-        .chat-area { padding-left: 12px; padding-right: 12px; }
-        /* Composer closer to edge on mobile */
-        .composer-wrap { padding-left: 8px !important; padding-right: 8px !important; }
-        /* Sidebar full-width on mobile */
-        aside { width: 85vw !important; max-width: 320px; }
-        /* Profile modal closer to full-width on mobile */
-        .profile-modal { max-width: 92vw !important; }
-      }
-      /* Better mobile header */
-      @media (max-width: 768px) {
-        header { padding-left: 10px !important; padding-right: 10px !important; }
-      }
-    </style>
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js" crossorigin="anonymous"></script>
-    <script>
-      
-      
-      
-      
-      
-      window.__lucaRenderMath = function() {
-        if (!window.renderMathInElement) return;
-        var root = document.getElementById('root');
-        if (!root) return;
-        try {
-          renderMathInElement(root, {
-            delimiters: [
-              {left: '$$', right: '$$', display: true},
-              {left: '$', right: '$', display: false},
-              {left: '\\[', right: '\\]', display: true},
-              {left: '\\(', right: '\\)', display: false},
-            ],
-            throwOnError: false,
-            ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            ignoredClasses: ['code-block', 'font-mono'],
-          });
-        } catch (e) {}
-      };
-      window.__lucaRenderMermaid = function() {
-        if (!window.mermaid) return;
-        try { window.mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' }); } catch(e) {}
-        var root = document.getElementById('root');
-        if (!root) return;
-        var blocks = root.querySelectorAll('pre code');
-        var toRender = [];
-        blocks.forEach(function(pre) {
-          var text = pre.textContent || '';
-          var m = text.match(/^\s*mermaid\s*\n([\s\S]+)/i);
-          if (m && !pre.dataset.mermaidRendered) {
-            toRender.push({ pre: pre, code: m[1].trim() });
-          }
-        });
-        if (toRender.length === 0) return;
-        toRender.forEach(function(item, idx) {
-          item.pre.dataset.mermaidRendered = '1';
-          var id = 'mermaid-' + Date.now() + '-' + idx;
-          try {
-            window.mermaid.render(id, item.code).then(function(result) {
-              var container = document.createElement('div');
-              container.className = 'mermaid-render my-3 flex justify-center overflow-x-auto';
-              container.innerHTML = result.svg;
-              item.pre.parentElement.replaceChild(container, item.pre);
-            }).catch(function(e) {
-              item.pre.textContent = item.code;
-            });
-          } catch(e) {
-            item.pre.textContent = item.code;
-          }
-        });
-      };
-      window.addEventListener('load', function() {
-        function setupMathObserver() {
-          if (!window.renderMathInElement) {
-            setTimeout(setupMathObserver, 300);
-            return;
-          }
-          var renderTimer = null;
-          function scheduleRender() {
-            if (renderTimer) clearTimeout(renderTimer);
-            renderTimer = setTimeout(function() {
-              renderTimer = null;
-              window.__lucaRenderMath();
-              window.__lucaRenderMermaid();
-            }, 150);
-          }
-          var observer = new MutationObserver(function() {
-            scheduleRender();
-          });
-          observer.observe(document.getElementById('root') || document.body, {
-            childList: true,
-            subtree: true,
-            characterData: true,
-          });
-          setTimeout(window.__lucaRenderMath, 500);
-          setTimeout(window.__lucaRenderMermaid, 800);
-          console.log('[Render] Math + Mermaid observers active');
-        }
-        setupMathObserver();
-      });
-    </script>
+    <script type="module" crossorigin src="./assets/index-B1B2DWdM.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BBQtx5Df.css">
   </head>
   <body>
     <div id="root"></div>
