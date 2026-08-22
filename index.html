@@ -1,0 +1,174 @@
+﻿<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Luca AI</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath fill='%236ba2ff' d='M41.883,9.38c-1.092-1.179-2.582-1.855-4.194-1.904c-1.629-0.046-3.171,0.542-4.346,1.667l-0.252,0.241%20c-2.551,2.441-2.594,6.42-0.098,9.059C34.932,20.493,36,23.177,36,26c0,3.018-1.197,5.832-3.372,7.926%20c-2.173,2.092-5.034,3.175-8.058,3.066c-5.611-0.213-10.35-4.951-10.566-10.618c-0.001-0.019-0.161-1.836,0.338-4.429%20c1.164-6.057,5.081-11.229,10.745-14.193l6.002-3.141c0.365-0.191,0.576-0.588,0.53-0.998c-0.047-0.41-0.34-0.749-0.739-0.854%20c-2.741-0.724-5.588-0.928-8.461-0.618C11.728,3.307,3.19,11.925,2.118,22.633C1.425,29.57,3.835,36.358,8.731,41.258%20c4.347,4.35,10.183,6.741,16.291,6.74c0.772,0,1.551-0.038,2.329-0.115c10.785-1.071,19.416-9.673,20.523-20.451%20C48.556,20.809,46.371,14.229,41.883,9.38z'/%3E%3C/svg%3E"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      
+      (function () {
+        var theme = null;
+        try {
+          var raw = localStorage.getItem("luca-onboarding");
+          if (raw) {
+            var p = JSON.parse(raw);
+            if (p && p.complete === true && p.theme) theme = p.theme;
+          }
+          if (!theme) {
+            var s = localStorage.getItem("luca-settings");
+            if (s) {
+              var sp = JSON.parse(s);
+              if (sp && sp.theme) theme = sp.theme;
+            }
+          }
+        } catch (e) {}
+        if (!theme) {
+          theme =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-Br5Z5Kdm.js?v=3"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-ecFEfU0C.css">
+    
+    <style>
+      .aspect-square { aspect-ratio: 1 / 1; }
+      .aspect-\[1792\/1024\] { aspect-ratio: 1792 / 1024; }
+      .aspect-\[1024\/1792\] { aspect-ratio: 1024 / 1792; }
+      .line-clamp-2 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+      /* Mobile improvements */
+      @media (max-width: 768px) {
+        /* Larger touch targets on mobile */
+        button { min-height: 36px; }
+        /* Better text size on mobile */
+        .chat-content { font-size: 15.5px; line-height: 1.65; }
+        /* Tighter padding on mobile chat */
+        .chat-area { padding-left: 12px; padding-right: 12px; }
+        /* Composer closer to edge on mobile */
+        .composer-wrap { padding-left: 8px !important; padding-right: 8px !important; }
+        /* Sidebar full-width on mobile */
+        aside { width: 85vw !important; max-width: 320px; }
+        /* Profile modal closer to full-width on mobile */
+        .profile-modal { max-width: 92vw !important; }
+      }
+      /* Better mobile header */
+      @media (max-width: 768px) {
+        header { padding-left: 10px !important; padding-right: 10px !important; }
+      }
+    </style>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js" crossorigin="anonymous"></script>
+    <script>
+      
+      
+      
+      
+      
+      window.__lucaRenderMath = function() {
+        if (!window.renderMathInElement) return;
+        var root = document.getElementById('root');
+        if (!root) return;
+        try {
+          renderMathInElement(root, {
+            delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\[', right: '\\]', display: true},
+              {left: '\\(', right: '\\)', display: false},
+            ],
+            throwOnError: false,
+            ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            ignoredClasses: ['code-block', 'font-mono'],
+          });
+        } catch (e) {}
+      };
+      window.__lucaRenderMermaid = function() {
+        if (!window.mermaid) return;
+        try { window.mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' }); } catch(e) {}
+        var root = document.getElementById('root');
+        if (!root) return;
+        var blocks = root.querySelectorAll('pre code');
+        var toRender = [];
+        blocks.forEach(function(pre) {
+          var text = pre.textContent || '';
+          var m = text.match(/^\s*mermaid\s*\n([\s\S]+)/i);
+          if (m && !pre.dataset.mermaidRendered) {
+            toRender.push({ pre: pre, code: m[1].trim() });
+          }
+        });
+        if (toRender.length === 0) return;
+        toRender.forEach(function(item, idx) {
+          item.pre.dataset.mermaidRendered = '1';
+          var id = 'mermaid-' + Date.now() + '-' + idx;
+          try {
+            window.mermaid.render(id, item.code).then(function(result) {
+              var container = document.createElement('div');
+              container.className = 'mermaid-render my-3 flex justify-center overflow-x-auto';
+              container.innerHTML = result.svg;
+              item.pre.parentElement.replaceChild(container, item.pre);
+            }).catch(function(e) {
+              item.pre.textContent = item.code;
+            });
+          } catch(e) {
+            item.pre.textContent = item.code;
+          }
+        });
+      };
+      window.addEventListener('load', function() {
+        function setupMathObserver() {
+          if (!window.renderMathInElement) {
+            setTimeout(setupMathObserver, 300);
+            return;
+          }
+          var renderTimer = null;
+          function scheduleRender() {
+            if (renderTimer) clearTimeout(renderTimer);
+            renderTimer = setTimeout(function() {
+              renderTimer = null;
+              window.__lucaRenderMath();
+              window.__lucaRenderMermaid();
+            }, 150);
+          }
+          var observer = new MutationObserver(function() {
+            scheduleRender();
+          });
+          observer.observe(document.getElementById('root') || document.body, {
+            childList: true,
+            subtree: true,
+            characterData: true,
+          });
+          setTimeout(window.__lucaRenderMath, 500);
+          setTimeout(window.__lucaRenderMermaid, 800);
+          console.log('[Render] Math + Mermaid observers active');
+        }
+        setupMathObserver();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
